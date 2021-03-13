@@ -1,0 +1,44 @@
+<html>
+<header>
+    <title> exercicio 1 </title>
+</header>
+
+<body>
+    <label for="weather"> Selecione o clima:</label>
+    <form id="formulario">
+
+        <select id="weather">
+            <option value="" selected>Selecione</option>
+            <option value="ensolarado">Ensolarado</option>
+            <option value="nublado">Nublado</option>
+            <option value="chuvoso">Chuvoso</option>
+            <option value="nevando">Nevando</option>
+        </select>
+        <button type="submit">Enviar</button>
+    </form>
+    <h1 id="message">
+
+    </h1>
+    <script>
+        document.getElementById("formulario").addEventListener("submit", checaTempo);
+        function checaTempo(event){
+            event.preventDefault();
+            let clima = document.getElementById("weather").value;
+            if (clima == "ensolarado") {
+                document.getElementById("message").innerHTML =
+                 `É um dia bonito e ensolarado! Vá à praia, ou ao parque e tome sorvete.`;
+            } else if (clima == "nublado") {
+                document.getElementById("message").innerHTML = 
+                `Não está chovendo ainda, mas o tempo pode mudar. Pegue um guarda-chuva só por precaução.`;
+            } else if (clima == "chuvoso") {
+                document.getElementById("message").innerHTML = 
+                `Está chovendo lá fora, pegue um capa de chuva ou um guarda-chuva e não fique fora por muito tempo!`;
+            } else if (clima == "nevando") {
+                document.getElementById("message").innerHTML = 
+                `Está muito frio! Melhor ficar em casa e tomar um chocolate quente.`;
+            }
+        }
+    </script>
+</body>
+
+</html>
