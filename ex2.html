@@ -1,0 +1,46 @@
+<html>
+<header>
+    <title> </title>
+</header>
+
+<body>
+    <form id="formulario">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name /><br />
+        <select name="gender" id="gender">
+            <option value="">Selecione</option>
+            <option value="feminino">Feminino</option>
+            <option value="masculino">Masculino</option>
+        </select>
+        <button type="submit">Enviar</button>
+    </form>
+    <h1 id="message"></h1>
+    <style>
+        .corFem {
+            background-color: rgb(0, 255, 157);
+        }
+
+        .corMasc {
+            background-color: darkviolet;
+        }
+    </style>
+    <script>
+        document.getElementById("formulario").addEventListener("submit", envioForm);
+        function envioForm(e){
+            e.preventDefault();
+            let nome, genero, msg;
+            nome = document.getElementById("name").value;
+            genero = document.getElementById("gender").value;
+            if (genero == "feminino"){
+                msg = `Bem-vinda ${nome}`;
+                document.getElementById("message").classList.add("corFem");
+            } else if (genero == "masculino"){
+                msg = `Bem-vindo ${nome}`;
+                document.getElementById("message").classList.add("corMasc");
+            } 
+            document.getElementById("message").innerHTML = msg;
+        }
+    </script>
+</body>
+
+</html>

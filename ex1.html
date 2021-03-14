@@ -21,8 +21,8 @@
     </h1>
     <script>
         document.getElementById("formulario").addEventListener("submit", checaTempo);
-        function checaTempo(event){
-            event.preventDefault();
+        function checaTempo(e){
+            e.preventDefault();
             let clima = document.getElementById("weather").value;
             if (clima == "ensolarado") {
                 document.getElementById("message").innerHTML =
