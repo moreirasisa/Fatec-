@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Exercício 2</title>
+    </head>
+    <body>
+        <form id="form">
+            <input id="n1" type="number" placeholder="Digite um número."/>
+            <button>Enviar</button>
+        </form>
+        <h1 id="tabuada"></h1>
+        <script>
+            function envioForm(event) {
+                event.preventDefault();
+                let number = parseFloat(n1.value);
+                tabuada.innerHTML = ``;
+                for (let multiplicacao = 0; multiplicacao <= 10; multiplicacao++) {
+                    tabuada.innerHTML += `${number} * ${multiplicacao} = ${number * multiplicacao} <br/>`;
+                }
+            }
+            form.addEventListener("submit", envioForm);
+        </script>
+    </body>
+</html>
